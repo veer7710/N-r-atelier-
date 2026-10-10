@@ -1,0 +1,52 @@
+.wm { display: inline-flex; line-height: 1; }
+.wm__nor {
+  font-family: var(--f-display);
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  font-feature-settings: 'ss01';
+}
+.wm__atelier {
+  font-family: var(--f-sans);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.44em;
+  /* the trailing letterspace is optical padding; pull it back */
+  margin-right: -0.44em;
+}
+.wm--ink { color: var(--c-espresso); }
+.wm--light { color: #F6F0E8; }
+
+/* ---- stacked ---- */
+.wm--stacked { flex-direction: column; align-items: center; gap: 0; }
+.wm--stacked .wm__rule {
+  width: 100%; height: 1px; background: currentColor; opacity: 0.5;
+}
+.wm--stacked.wm--sm .wm__nor { font-size: 1.5rem; }
+.wm--stacked.wm--sm .wm__rule { margin: 0.38rem 0 0.4rem; }
+.wm--stacked.wm--sm .wm__atelier { font-size: 0.5rem; }
+
+.wm--stacked.wm--md .wm__nor { font-size: clamp(2.5rem, 7vw, 3.75rem); }
+.wm--stacked.wm--md .wm__rule { margin: 0.55rem 0 0.6rem; }
+.wm--stacked.wm--md .wm__atelier { font-size: clamp(0.62rem, 1.5vw, 0.82rem); }
+
+.wm--stacked.wm--lg .wm__nor { font-size: clamp(4rem, 15vw, 10rem); }
+.wm--stacked.wm--lg .wm__rule { margin: 0.7rem 0 0.8rem; }
+.wm--stacked.wm--lg .wm__atelier { font-size: clamp(0.8rem, 2.4vw, 1.5rem); }
+
+/* ---- inline ---- */
+.wm--inline { flex-direction: row; align-items: center; }
+.wm--inline .wm__divider {
+  width: 1px; align-self: stretch; background: currentColor; opacity: 0.32;
+}
+.wm--inline.wm--md .wm__nor { font-size: 1.32rem; }
+.wm--inline.wm--md .wm__divider { margin: 0.12rem 0.72rem 0.1rem; }
+.wm--inline.wm--md .wm__atelier { font-size: 0.57rem; padding-top: 0.12em; }
+
+.wm--inline.wm--sm .wm__nor { font-size: 1.06rem; }
+.wm--inline.wm--sm .wm__divider { margin: 0.1rem 0.56rem 0.08rem; }
+.wm--inline.wm--sm .wm__atelier { font-size: 0.5rem; letter-spacing: 0.34em; margin-right: -0.34em; }
+
+@media (max-width: 420px) {
+  .wm--inline.wm--md .wm__nor { font-size: 1.18rem; }
+  .wm--inline.wm--md .wm__atelier { font-size: 0.5rem; letter-spacing: 0.3em; margin-right: -0.3em; }
+}

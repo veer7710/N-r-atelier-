@@ -1,0 +1,101 @@
+/* ============================================================
+   NŌR ATELIER — Design tokens
+   Single source of truth for colour, type, space, motion.
+   Direction: "Atelier Index" — light-led editorial, espresso ink,
+   darker sections used as deliberate contrast moments.
+   ============================================================ */
+
+:root {
+  /* ---- Surfaces (light-led foundation) ---- */
+  --c-ivory:        #F7F3ED;  /* primary page background */
+  --c-cream:        #FCFAF6;  /* raised surfaces, cards */
+  --c-paper:        #F1EBE2;  /* tertiary panels, inset wells */
+  --c-stone:        #E7DFD3;  /* photographic sweeps */
+
+  /* ---- Ink ---- */
+  --c-espresso:     #261B17;  /* primary ink + dark sections */
+  --c-espresso-dp:  #19110F;  /* footer, deepest contrast */
+  --c-cocoa:        #80695B;  /* secondary ink (>=15px only) */
+  --c-cocoa-dk:     #6E5950;  /* secondary ink, small sizes (AA) */
+
+  /* ---- Accents (restrained) ---- */
+  --c-rose:         #C99C9D;
+  --c-champagne:    #C6AD8A;
+  --c-oxblood:      #632D37;
+
+  /* ---- Lines ---- */
+  --c-line:         #E2D9CC;
+  --c-line-strong:  #CFC2B0;
+  --c-line-dark:    rgba(246, 240, 232, 0.16);
+
+  /* ---- Semantic ---- */
+  --bg:             var(--c-ivory);
+  --bg-raised:      var(--c-cream);
+  --bg-inset:       var(--c-paper);
+  --ink:            var(--c-espresso);
+  --ink-2:          var(--c-cocoa-dk);
+  --accent:         var(--c-oxblood);
+  --line:           var(--c-line);
+
+  /* ---- Type ---- */
+  --f-display: 'Bodoni Moda', 'Didot', 'Times New Roman', serif;
+  --f-sans: 'Instrument Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+
+  --t-display-xl: clamp(2.9rem, 8.4vw, 6.6rem);
+  --t-display-l:  clamp(2.2rem, 5.4vw, 4.1rem);
+  --t-display-m:  clamp(1.7rem, 3.4vw, 2.6rem);
+  --t-display-s:  clamp(1.32rem, 2.2vw, 1.72rem);
+  --t-body-l:     clamp(1.02rem, 1.05vw, 1.16rem);
+  --t-body:       1rem;
+  --t-body-s:     0.9375rem;
+  --t-label:      0.6875rem;   /* 11px, tracked caps */
+  --t-micro:      0.75rem;
+
+  --tr-label: 0.19em;
+  --tr-caps:  0.12em;
+
+  /* ---- Space ---- */
+  --s-1: 0.25rem;  --s-2: 0.5rem;   --s-3: 0.75rem;  --s-4: 1rem;
+  --s-5: 1.5rem;   --s-6: 2rem;     --s-7: 3rem;     --s-8: 4rem;
+  --s-9: 6rem;     --s-10: 8rem;
+
+  --section-y: clamp(3.75rem, 8vw, 7.5rem);
+  --gutter:    clamp(1.15rem, 4.2vw, 3.75rem);
+  --maxw:      1440px;
+  --maxw-text: 62ch;
+
+  /* ---- Radii: near-square. Cosmetics packaging is machined, not bubbly. ---- */
+  --r-0: 0px;
+  --r-1: 2px;
+  --r-2: 4px;
+  --r-pill: 999px;
+
+  /* ---- Elevation: restrained, warm-tinted ---- */
+  --sh-1: 0 1px 2px rgba(38, 27, 23, 0.05);
+  --sh-2: 0 10px 30px -14px rgba(38, 27, 23, 0.18);
+  --sh-3: 0 30px 70px -28px rgba(38, 27, 23, 0.30);
+
+  /* ---- Motion ---- */
+  --e-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --e-inout: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --d-fast: 160ms;
+  --d-mid:  320ms;
+  --d-slow: 620ms;
+
+  --z-header: 80;
+  --z-overlay: 100;
+}
+
+/* Dark editorial sections opt in by class, not by media query:
+   the palette is deliberate art direction, not a theme. */
+.on-dark {
+  --bg: var(--c-espresso);
+  --bg-raised: #2F221D;
+  --bg-inset: #1F1512;
+  --ink: #F6F0E8;
+  --ink-2: #C3AE9F;
+  --accent: var(--c-champagne);
+  --line: var(--c-line-dark);
+  color: var(--ink);
+  background: var(--bg);
+}
